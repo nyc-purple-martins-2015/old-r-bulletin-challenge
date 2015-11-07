@@ -8,18 +8,29 @@
 
 
 u = User.create!(username:'admin', email:Faker::Internet.email, password:'pw123456')
+30.times { User.create!(username: Faker::Internet.user_name, email:Faker::Internet.email, password:'pw123456') }
+puts "Created users"
 Category.create!(name:'General', display_order:10)
 Category.create!(name:'Tech advice', display_order:20)
 Category.create!(name:'Product guides', display_order:30)
 Category.create!(name:'Miscellaneous', display_order:40)
 cats = Category.all
+users = User.all
 
-12.times do
-  top = Topic.create!(name: Faker::Company.catch_phrase, category: cats.sample)
-  6.times do
-    thr = Conversation.create!(name:Faker::Commerce.product_name, topic:top, author:u )
-    Random.rand(20).times do
-      msg = Message.create!(user:u, conversation:thr, content:Faker::Lorem.sentence)
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')
+puts "Created categories"
+
+puts "Creating topics conversations and messages"
+12.times do |n|
+  print "#{sprintf("%2d", n + 1)} of 12 ."
+  top = Topic.create!(name: "#{Faker::App.name} #{alphabet.sample} #{Faker::App.name} #{Faker::App.name}", category: cats.sample)
+  30.times do
+    print "+"
+    thr = Conversation.create!(name:Faker::Commerce.product_name, topic:top, author:users.sample )
+    Random.rand(120).times do
+      msg = Message.create!(user:users.sample, conversation:thr, content:Faker::Lorem.paragraphs(3).join("\n"))
     end
   end
+  puts "Done"
+
 end
