@@ -1,0 +1,16 @@
+<h1> Conversations for <%= link_to "#{@topic.name}", topics_path %></h1>
+
+<ul>
+  <% @topic.conversations.sort_by { |convo| convo.updated_at }.each do |convo| %>
+  <li>Topic: <%= convo.name %>, Last updated:<%= convo.updated_at.strftime('%m/%d/%y') %></li><br>
+
+  <ol>
+    <h4>Messages for <%= convo.name %></h4>
+    <% convo.messages.each do |message| %>
+    <li><%= message.content %></li>
+  <% end %>
+  </ol><br>
+
+<% end %>
+  </ul>
+

@@ -1,6 +1,6 @@
 RBulletin::Application.routes.draw do
-  resources :categories do
-    resources :topics
+    resources :topics do
+      resources :conversations
   end
-
+  root 'topics#index'
 end

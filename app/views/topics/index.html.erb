@@ -1,0 +1,11 @@
+<h1>RBulletin Topics</h1>
+<ul>
+  <% @topics.each do |topic| %>
+    <li><%= topic.name %></li>
+    <ol>
+    <% topic.conversations.each do |convo| %>
+      <li><%= link_to "#{convo.name}", topic_conversation_path(topic, convo) %></li>
+    <% end %>
+    </ol><br>
+  <% end %>
+</ul>
