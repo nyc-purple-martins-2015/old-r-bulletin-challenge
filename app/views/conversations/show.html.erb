@@ -1,7 +1,9 @@
-<div class="message-list">
+<div class="login?">
   <% if log_in? %>
-    <%= link_to "New", "/conversations/#{@conversation.id}/messages/new" %>
+    <%= link_to "New Message", "/conversations/#{@conversation.id}/messages/new" %>
   <% end %>
+</div>
+<div class="message-list">
   <% @conversation.messages.each do |message| %>
   <p><%=message.content %></p>
   <% end %>
