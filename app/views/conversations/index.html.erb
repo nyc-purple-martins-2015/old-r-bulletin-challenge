@@ -1,0 +1,5 @@
+<div class="recent-conversation">
+  <% @recent_conversation.each do |conversation| %>
+  <p><%= link_to conversation.name, conversation %>, <%=conversation.updated_at %></p>
+  <% end %>
+</div>

@@ -1,0 +1,5 @@
+<div class="conversation-list">
+  <% @topic.conversations.each do |conversation| %>
+  <p><%= link_to conversation.name, conversation %></p>
+  <% end %>
+</div>

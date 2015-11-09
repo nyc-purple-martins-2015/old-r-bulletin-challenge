@@ -1,0 +1,5 @@
+<div class="topic-list">
+  <% @category.topics.each do |topic| %>
+  <p><%= link_to topic.name, topic %></p>
+  <% end %>
+</div>

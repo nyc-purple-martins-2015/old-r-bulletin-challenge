@@ -1,0 +1,6 @@
+<div class="category-list">
+  <% @categories.each do |category| %>
+  <p><h2><%= category.name %></h2></p>
+  <p><%= render category.topics %>
+  <% end %>
+</div>
