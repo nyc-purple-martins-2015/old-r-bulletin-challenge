@@ -9,4 +9,18 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     render :show
   end
+
+  def new
+    @topics = Topic.all
+    @conversation = Conversation.new
+  end
+
+  def create
+    @conversation = current_user.conversations.new(name: params[:conversation][:name], topic_id: params[:conversation][:topic_id])
+    if @conversation.save
+      redirect_to @conversation
+    else
+      render :new
+    end
+  end
 end
