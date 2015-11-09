@@ -1,0 +1,5 @@
+<h1><%= @topic.name%></h1>
+
+<% @topic.conversations.each do |conv| %>
+<p> <%= link_to "#{conv.name}", conversation_path(conv) %> </p>
+<% end %> 
