@@ -7,7 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if flash[:notice].nil? == false  %>
+  <div class="flash"><%= flash[:notice] %></div>
+  <% end %>
+  <div>
+    <a href="/"> home </a>
+  </div>
+  <% if logged_in? %>
+    <div>
+      <a href="/logout">logout</a>
+    </div>
+  <% else %>
+    <div>
+      <a href="/sign_up">sign up</a> | <a href="/login">login</a>
+    </div>
+  <% end %>
 <%= yield %>
 
 </body>

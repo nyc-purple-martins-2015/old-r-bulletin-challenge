@@ -1,0 +1,13 @@
+<h4>Add a message</h4>
+
+<%= form_for @message do |f| %>
+
+  <div>
+    <%= f.hidden_field(:conversation_id, value: @message.conversation_id) %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

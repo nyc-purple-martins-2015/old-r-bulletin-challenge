@@ -1,0 +1,12 @@
+<ul>
+  <% @conversations.each do |conversation| %>
+  <li>
+    <%= link_to conversation.name, topic_conversation_path(conversation.topic_id, conversation) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "edit this topic", edit_topic_path(@topic) %>
+
+
+
