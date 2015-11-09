@@ -1,0 +1,12 @@
+
+<h1> <%= @conversation.name %> </h1>
+<% if logged_in? %>
+<span class="get_new_message_form"><%=link_to 'Add a message to this conversation', new_conversation_message_path(@conversation.id)%></span>
+<%= render partial:"messages/new" %>
+<%end%>
+<div class="convo_message_list">
+<% @messages.each do |message| %>
+
+<%=render partial:"messages/show", layout: false, locals:{message: message} %>
+<% end %>
+</div>

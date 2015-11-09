@@ -1,0 +1,9 @@
+<% if session[:user_id] %>
+<p>Hello</p>
+<%end%>
+
+<ul>
+<% @categories.each do |category| %>
+  <li><%= link_to "#{category.name}", category %></li>
+  <% end %>
+</ul>

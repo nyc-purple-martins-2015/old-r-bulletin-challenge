@@ -1,0 +1,6 @@
+
+<ul>
+<% @topics.each do |topic| %>
+  <li><%= link_to topic.name, category_topic_path(topic.category_id, topic) %></li>
+  <% end %>
+</ul>

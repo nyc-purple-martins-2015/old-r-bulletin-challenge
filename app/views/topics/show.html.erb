@@ -1,0 +1,17 @@
+<h1><%=@topic.name%></h1>
+
+<% if logged_in? %>
+Create a new conversation for <%=@topic.name%>:
+<%= form_for @conversation, url: topic_conversations_path(@topic.id) do |f| %>
+  Name: <%= f.text_field :name %>
+  <%= f.submit 'Create New Conversation' %>
+<% end %>
+<% end %>
+
+<ul class="convo_list">
+<% @conversations.each do |convo| %>
+<%= render partial: "conversations/conversation_list_item", layout: false, locals:{convo: convo} %>
+<% end %>
+</ul>
+
+
