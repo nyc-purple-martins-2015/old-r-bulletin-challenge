@@ -1,4 +1,56 @@
 Rails.application.routes.draw do
+
+  get 'conversations/index'
+
+  get 'conversations/show'
+
+  get 'conversations/new'
+
+  get 'conversations/edit'
+
+  get 'conversations/create'
+
+  get 'conversations/update'
+
+  get 'conversations/delete'
+
+  root "topics#index"
+
+  get 'topics/create'
+
+  get 'topics/update'
+
+  get 'topics/delete'
+
+  get 'topics/show'
+
+  get 'topics/new'
+
+  get 'topics/edit'
+
+  get 'topics/index'
+
+  get 'sign_up' => 'users#new'
+
+  get 'login' => 'sessions#new'
+
+  get 'logout' => 'sessions#destroy'
+  # root 'topics#index'
+
+  resources :topics do
+    resources :conversations
+  end
+
+  # resources :conversations, only: [:show] do
+  #   resources :messages, only: [:new, :create]
+  # end
+
+  resources :messages, only: [:new, :create]
+
+  resources :users, only: [:new, :create]
+
+  resource :session, only: [:new, :create, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
