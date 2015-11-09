@@ -7,11 +7,13 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  resource :session, only: [:create, :new, :destroy]
+  resources :sessions, only: [:create, :destroy]
   resources :users, only: [:create, :new]
 
 
-  # get 'register' :'users#new'
+  get '/register', to: 'users#new'
+  get '/login', to: 'sessions#new'
+
 
   root 'topics#index'
 end
