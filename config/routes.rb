@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'categories#index'
+  resources :categories do
+    resources :topics
+  end
+  resources :conversations do
+    resources :messages
+  end
+  resources :users do
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
