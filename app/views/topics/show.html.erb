@@ -1,6 +1,14 @@
 <h1><%= @topic.name %></h1>
+<% if logged_in? %>
+  <button>
+    <%= link_to 'New Post', new_topic_conversation_path(@topic) %>
+  </button>
+<%else%>
+  <h4>Log In To Create a New Post</h4>
+<%end%>
+
 <ul>
   <% @conversations.each do |conversation| %>
-    <li><%= link_to conversation.name, topic_conversation_path(@topic.id, conversation) %></li>
+    <li><%= link_to conversation.name, conversation_path(conversation) %></li>
   <% end %>
 </ul>

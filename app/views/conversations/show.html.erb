@@ -6,3 +6,16 @@
     <p><%= message.user.username %></p>
   </div>
 <% end %>
+
+<%if logged_in?%>
+<div>
+  <%= form_for :message, url: conversation_messages_path(@conversation) do |f| %>
+    <%= f.label :message_body %>
+    <%= f.text_field :content %>
+
+    <%= f.submit 'Submit Message' %>
+  <% end %>
+</div>
+<%else%>
+  <h4>Log In To Write a New Message</h4>
+<%end%>

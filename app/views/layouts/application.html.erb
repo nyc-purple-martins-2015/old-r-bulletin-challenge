@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="header">
+    <% if flash[:notice] %>
+      <p class="errors"><%= flash[:notice] %></p>
+    <% end %>
+
+    <h2>Forum</h2>
+    <%if logged_in?%>
+      <h3><%= link_to current_user.username, user_path(current_user) %></h3>
+      <h3><%= link_to 'Sign Out', logout_path, method: "delete" %></h3>
+    <%else%>
+      <h3><%= link_to 'Log In', login_path %></h3>
+      <h3><%= link_to 'Sign Up', new_user_path %></h3>
+    <%end%>
+  </div>
 
 <%= yield %>
 
