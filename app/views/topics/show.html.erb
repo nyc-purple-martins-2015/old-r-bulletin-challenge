@@ -1,0 +1,9 @@
+<h1>Conversations on <%= @topic.name %></h1>
+
+<div><%= link_to "Create a new conversation", new_topic_conversation_path(@topic.id) %></div>
+
+<% @conversations.each do |conversation| %>
+  <div><%=link_to conversation.name, topic_conversation_path(@topic.id, conversation)%> Updated at: <%= conversation.updated_at %></div>
+<% end %>
+
+

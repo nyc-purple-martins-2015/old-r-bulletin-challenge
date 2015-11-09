@@ -1,0 +1,12 @@
+<h1> You are reading about <%= @conversation.name %></h1>
+
+<p>Messages: </p>
+
+<form method="get" action="/messages/new">
+  <input type="hidden" name="conversation[id]" value="<%= @conversation.id %>">
+  <input type="submit" value="Add new message">
+</form>
+
+<% @conversation.messages.each do |message| %>
+  <div class="message"><%= message.content %></div>
+<% end %>

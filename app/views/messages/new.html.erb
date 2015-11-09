@@ -1,0 +1,9 @@
+<h1> Add a message! </h1>
+
+<%= form_for :message, url: messages_path do |f| %>
+
+  <%= f.text_area :content %>
+  <%= f.hidden_field :conversation_id, :value => @conversation_id %>
+  <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  <%= f.submit %>
+<% end %>
