@@ -16,6 +16,9 @@
   <%= link_to "Sign Up", sign_up_path %>::<%= link_to "Log In", log_in_path %>
   <%end %>
 
+  <% if flash[:notice] %>
+  <%= flash[:notice] %>
+  <% end %>
 
 <%= yield %>
 

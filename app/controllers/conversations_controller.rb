@@ -20,6 +20,7 @@ class ConversationsController < ApplicationController
     if @conversation.save
       redirect_to @conversation
     else
+      flash.now[:notice] = "No Name or Topic"
       render :new
     end
   end
