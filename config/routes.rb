@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :users, only: [:new, :create]
   resources :topics
-  resources :conversations, only: [:index, :show] do
+  resources :conversations, only: [:index, :show, :new, :create] do
     resources :messages, only: [:new, :create]
   end
 
