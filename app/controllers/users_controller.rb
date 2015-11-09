@@ -12,4 +12,8 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def show
+    render :show
+  end
 end
