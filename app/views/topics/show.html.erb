@@ -1,0 +1,8 @@
+<div>
+  <h1><%= @topic.name %></h1>
+  <ul>
+  <% @topic.conversations.each do |convo| %>
+  <li><%= convo.name %></li>
+  <% end %>
+</ul>
+</div>
