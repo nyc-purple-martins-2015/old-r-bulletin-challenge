@@ -3,3 +3,7 @@
 <% @messages.each do |message| %>
 <div> <%= message.content %> </div>
 <% end %>
+
+<% if logged_in? %>
+<%=link_to 'Add a message to this conversation', new_conversation_message_path(@conversation.id)%>
+<%end%>

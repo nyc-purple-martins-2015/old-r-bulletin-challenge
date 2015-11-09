@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @conversation = Conversation.new
     @conversations = Conversation.where(topic_id: @topic.id).sort_by{|convo| convo.updated_at}.reverse
   end
 

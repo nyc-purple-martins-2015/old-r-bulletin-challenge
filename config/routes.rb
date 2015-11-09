@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
   resources :users do
   end
+  resources :topics, only: [:show] do
+    resources :conversations, only: [:create]
+  end
 
 get 'register' => 'users#new'
 get 'login' => 'sessions#new'

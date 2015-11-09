@@ -8,7 +8,11 @@
 </head>
 <body>
   <header>
-
+  <% if logged_in? %>
+    <%= current_user.username %> <%= link_to 'logout', logout_path %>
+  <% else %>
+    <%= link_to 'login', login_path %> <%= link_to 'register', register_path %>
+  <% end %>
   </header>
 
 <%= yield %>

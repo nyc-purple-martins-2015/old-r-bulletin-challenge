@@ -3,3 +3,12 @@
 <li> <%= link_to "#{convo.name}, #{convo.updated_at}", convo %> </li>
 <% end %>
 </ul>
+
+<% if logged_in? %>
+Create a new conversation:
+<%= form_for @conversation, url: topic_conversations_path(@topic.id) do |f| %>
+  Name: <%= f.text_field :name %>
+  <%= f.submit 'Create New Conversation' %>
+<% end %>
+
+<% end %>
