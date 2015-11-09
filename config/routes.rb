@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :conversations
   end
 
+  resources :messages, only: [:new, :create]
+
   resources :users
   get "register" => "users#new"
 
