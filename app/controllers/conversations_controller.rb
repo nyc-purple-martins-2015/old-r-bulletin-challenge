@@ -1,10 +1,10 @@
 class ConversationsController < ApplicationController
 
   def index
+
   end
 
   def show
-    @conversations = Conversation.where(topic: params[:id] )
+    @conversation = Conversation.find(params[:id])
   end
-
 end

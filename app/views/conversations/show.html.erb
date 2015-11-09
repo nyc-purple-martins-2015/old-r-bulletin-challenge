@@ -1,3 +1,4 @@
-<% @conversations.each do |convo| %>
-  <h3><%= convo.name %></h3>
+<h3><%= @conversation.name %></h3>
+<% @conversation.messages.each do |message| %>
+  <p><%= message.content %></p>
 <% end %>
