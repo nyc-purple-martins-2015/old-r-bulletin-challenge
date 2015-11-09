@@ -1,0 +1,14 @@
+<div class="user-page">
+  <ul>
+  <h3>Recent Messages</h3>
+  <% current_user.messages.order('created_at DESC').slice(0..9).each do |message| %>
+  <li><%= message.content %></li>
+  <% end %>
+  </ul>
+  <ul>
+  <h3>My Conversations</h3>
+  <% current_user.conversations.order('updated_at DESC').each do |conversation| %>
+  <li><%= conversation.name %></li>
+  <% end %>
+  </ul>
+</div>
