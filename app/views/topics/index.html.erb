@@ -1,5 +1,9 @@
 <h1> Welcome to Pprune</h1>
-
-<% @topics.each do |topic| %>
-	<p><%= link_to "#{topic.name}", topic_path(topic) %></p>
+<ul>
+<% @categories.each do |cat| %>
+  <h2><%= cat.name %></h2>
+  <% cat.topics.each do |topic| %>
+	<li><%= link_to "#{topic.name}", topic_path(topic) %></li>
+  <% end %>
 <% end %>
+</ul>
