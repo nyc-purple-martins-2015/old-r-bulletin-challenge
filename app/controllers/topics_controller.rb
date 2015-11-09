@@ -3,6 +3,8 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @topic = Topic.find(params[:id])
+    @conversations = Conversation.where(topic_id: @topic.id)
   end
 
   def new
