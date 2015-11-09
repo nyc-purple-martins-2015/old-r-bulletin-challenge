@@ -16,6 +16,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
+    @topics = Topic.all
     @conversation = current_user.conversations.new(name: params[:conversation][:name], topic_id: params[:conversation][:topic_id])
     if @conversation.save
       redirect_to @conversation
@@ -24,4 +25,5 @@ class ConversationsController < ApplicationController
       render :new
     end
   end
+
 end
