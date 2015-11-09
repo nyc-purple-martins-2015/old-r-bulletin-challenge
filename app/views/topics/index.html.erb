@@ -1,0 +1,8 @@
+<h1> Welcome to the forum </h1>
+
+<% @topics.each do |topic| %>
+  <div><%= link_to topic.name, topic_path(topic) %></div>
+<% end %>
+
+
+
