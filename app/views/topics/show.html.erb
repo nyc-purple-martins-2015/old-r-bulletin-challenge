@@ -1,0 +1,6 @@
+<h1><%= @topic.name %></h1>
+<ol>
+  <% @topic.conversations.each do |convo| %>
+    <li> <%= link_to "#{convo.name}", convo %> </li>
+  <% end %>
+</ol>

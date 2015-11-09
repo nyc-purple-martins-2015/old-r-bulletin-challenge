@@ -1,0 +1,7 @@
+<h1> <%= @convo.name %> </h1>
+
+<ol>
+  <% @convo.messages.each do |message| %>
+    <li> <%= message.content %> </li>
+  <% end %>
+</ol>
