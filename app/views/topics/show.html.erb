@@ -1,6 +1,6 @@
 <h1>Conversations on <%= @topic.name %></h1>
 
 <% @conversations.each do |conversation| %>
-  <div><%=link_to conversation.name, topic_conversation_path(@topic.id, conversation)%></div>
+  <div><%=link_to conversation.name, topic_conversation_path(@topic.id, conversation)%> Updated at: <%= conversation.updated_at %></div>
 <% end %>
 
