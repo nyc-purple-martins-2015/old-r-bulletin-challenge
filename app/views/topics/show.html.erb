@@ -1,5 +1,5 @@
 <ul>
 <% @conversations.each do |convo| %>
-<li> <%= link_to "#{convo.name}", convo %> </li>
+<li> <%= link_to "#{convo.name}, #{convo.updated_at}", convo %> </li>
 <% end %>
 </ul>

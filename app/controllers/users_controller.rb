@@ -5,10 +5,19 @@ class UsersController < ApplicationController
   def show
   end
 
-  def new
+  def create
+    user_params = params.require(:user).permit(:username, :email, :password)
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to categories_path
+    else
+      render :new
+    end
   end
 
-  def create
+  def new
+    @user = User.new
+
   end
 
   def edit
@@ -19,4 +28,5 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
 end
