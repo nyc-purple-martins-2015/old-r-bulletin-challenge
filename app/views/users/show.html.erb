@@ -1,0 +1,19 @@
+<h1>Hello <%=@user.username%></h1>
+
+<% if @conversations %>
+<h3> Here's a listing of all your conversations: </h3>
+<ul>
+<% @conversations.each do |convo| %>
+<li> <%= link_to convo.name, convo %> </li>
+<% end %>
+</ul>
+<% end %>
+
+<% if @messages %>
+<h3> Here's a listing of all your messages: </h3>
+<ul>
+<% @messages.each do |message| %>
+<li> <%= link_to message.content, conversation_message_path(message.conversation_id, message) %> </li>
+<% end %>
+</ul>
+<% end %>

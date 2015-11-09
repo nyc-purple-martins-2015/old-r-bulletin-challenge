@@ -9,7 +9,7 @@
 <body>
   <header>
   <% if logged_in? %>
-    <%= current_user.username %> <%= link_to 'logout', logout_path %>
+    <%= link_to current_user.username, user_path(current_user.id) %> <%= link_to 'logout', logout_path %>
   <% else %>
     <%= link_to 'login', login_path %> <%= link_to 'register', register_path %>
   <% end %>

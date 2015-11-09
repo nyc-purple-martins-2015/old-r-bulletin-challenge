@@ -1,5 +1,7 @@
+<div class="new_message_form">
 <%= form_for @message, url: conversation_messages_path(@conversation.id) do |f| %>
   Content: <%= f.text_area :content %>
   <%= f.submit 'Create New Message' %>
 <% end %>
+</div>
 

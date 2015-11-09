@@ -3,6 +3,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    if logged_in?
+      @user = current_user
+      @conversations = @user.conversations
+      @messages = @user.messages
+    else
+      redirect_to login_path
+    end
   end
 
   def create
