@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if logged_in? %>
+    <h1>Hi, <%= current_user.username %></h1>
+    <%= link_to "Logout", logout_path %>
+  <% else %>
+    <%= link_to "Register", register_path %>
+  <% end %>
 
 <%= yield %>
 
