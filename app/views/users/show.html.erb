@@ -1,0 +1,15 @@
+<h1>Your most recent messages</h1>
+  <ol>
+    <% @messages.sort_by { |message| message.updated_at }.each do |message| %>
+    <li><%= message.content %></li>
+    <% end %>
+  </ol><br>
+
+<h1>The conversations you started</h1>
+<ul>
+  <% @conversations.sort_by { |convo| convo.updated_at }.each do |convo| %>
+  <li>Conversation: <%= convo.name %>, Last updated:<%= convo.updated_at.strftime('%m/%d/%y') %></li><br>
+
+
+<% end %>
+  </ul>

@@ -1,0 +1,13 @@
+<%= form_for [@conversation, @message] do |f| %>
+<br>
+<div>
+  <%= f.label :content %><br>
+  <%= f.text_field :content %>
+</div><br>
+<div>
+  <%= f.submit "Create New Message" %>
+</div>
+
+<% end  %>
+
+
