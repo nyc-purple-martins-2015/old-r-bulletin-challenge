@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:create, :destroy]
-  resources :users, only: [:create, :new]
-
+  resources :users, only: [:new]
 
   get '/register', to: 'users#new'
   get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
 
