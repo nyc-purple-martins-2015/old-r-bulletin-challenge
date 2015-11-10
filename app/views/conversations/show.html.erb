@@ -2,3 +2,9 @@
 <% @conversation.messages.each do |message| %>
 	<p><%=message.content%></p>
 <%end%>
+<h1> Enter new comment: </h1>
+<%= form_for ([@conversation, @message]) do |f| %>
+   <%= f.label 'content:' %>
+  <%= f.text_area :content, size: "60x12" %>
+  <%= f.submit "Submit" %>
+<% end %>

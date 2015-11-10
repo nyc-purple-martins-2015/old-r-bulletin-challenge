@@ -15,12 +15,12 @@
 		<%= link_to "Login", login_path %>
 		<%= link_to "Register", register_path %>
 	<% end %>
-	<% if flash[:notice] %>
-		<%= flash[:notice] %>
-	<% end %>
 	<%= link_to "Home", root_path  %>
 	</header>
 
+	<% if flash[:notice] %>
+		<%= flash[:notice] %>
+	<% end %>
 <%= yield %>
 
 </body>
