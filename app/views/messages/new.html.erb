@@ -1,0 +1,9 @@
+<%= form_for(@message, url: conversation_messages_path) do |f| %>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+  <div> 
+  	<%= f.submit %> 
+  </div>
+<% end %>
