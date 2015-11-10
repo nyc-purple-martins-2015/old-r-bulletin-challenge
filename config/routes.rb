@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace "my" do
     resources :messages, only: :index
+    resources :conversations, only: :index
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
