@@ -10,7 +10,7 @@ class ConversationsController < ApplicationController
 
   def create
     topic = Topic.find(params[:topic_id])
-    conversation = topic.conversations.build(conversation_params)
+    conversation = topic.conversations.build(conversation_params.merge(user_id: current_user.id))
 
     if conversation.save
       flash[:notice] = "Created conversation"
