@@ -2,8 +2,14 @@ Rails.application.routes.draw do
 
   resources :topics
   resources :conversations
+  resources :users, only: [:new, :create]
+  resources :messages, only: [:new, :create]
+
 
   get 'active' => 'conversations#active'
+  get 'login' => 'session#new'
+  post 'login' => 'session#create'
+  get 'logout' => 'session#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

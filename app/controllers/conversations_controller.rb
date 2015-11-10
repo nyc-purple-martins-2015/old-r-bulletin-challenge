@@ -4,7 +4,8 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @convo = Conversation.find(params[:id])
+    @message = Message.new
+    @conversation = Conversation.find(params[:id])
   end
 
   def active
