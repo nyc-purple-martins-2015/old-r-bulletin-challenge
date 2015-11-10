@@ -1,4 +1,6 @@
 class ConversationsController < ApplicationController
+  before_action :all_conversations, only: [:create]
+  respond_to :html, :js
 
   def create
     @topic = Topic.find(params[:topic_id])
@@ -15,6 +17,7 @@ class ConversationsController < ApplicationController
   def new
     @topic = Topic.find(params[:topic_id])
     @conversation = Conversation.new
+    # render 'new'
   end
 
   def edit
@@ -33,6 +36,10 @@ class ConversationsController < ApplicationController
   end
 
   private
+
+  def all_conversations
+    @conversations = Conversation.all
+  end
 
   def convo_params
     params.require(:conversation).permit(:name).merge(user_id: current_user.id, topic_id: @topic.id)

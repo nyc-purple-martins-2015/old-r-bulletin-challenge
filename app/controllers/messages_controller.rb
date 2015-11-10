@@ -1,8 +1,6 @@
 class MessagesController < ApplicationController
-
-  # def new
-  #   render
-  # end
+  before_action :all_messages, only: [:create]
+  respond_to :html, :js
 
   def create
     @conversation = Conversation.find(params[:conversation_id])
@@ -15,11 +13,13 @@ class MessagesController < ApplicationController
     end
   end
 
+    private
 
-  def destroy
+  def all_messages
+    @conversation = Conversation.find(params[:conversation_id])
+    @messages = @conversation.messages
   end
 
-    private
 
   def message_params
     params.require(:message).permit(:content).merge(user_id: current_user.id, conversation_id: @conversation.id)
