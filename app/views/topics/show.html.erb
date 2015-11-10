@@ -1,5 +1,15 @@
 <h1><%= @topic.name %></h1>
 
+<% if logged_in? %>
+  <h2>Add Topic</h2>
+  <%= form_for [@topic, @topic.conversations.build] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
 <ul class="conversation-list">
   <% @topic.conversations.each do |conversation| %>
     <li><%= link_to conversation.name, [@topic, conversation] %></li>
