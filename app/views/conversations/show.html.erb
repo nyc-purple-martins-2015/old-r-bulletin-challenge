@@ -1,14 +1,17 @@
-<h1> Conversations for <%= link_to "#{@topic.name}", topics_path %></h1>
+<h1> Conversations for Topic: <%= link_to "#{@topic.name}", topics_path %></h1>
 
 <ul>
   <% @topic.conversations.sort_by { |convo| convo.updated_at }.each do |convo| %>
-  <li>Topic: <%= convo.name %>, Last updated:<%= convo.updated_at.strftime('%m/%d/%y') %></li><br>
+  <li>Conversation: <%= convo.name %>, Last updated:<%= convo.updated_at.strftime('%m/%d/%y') %></li><br>
 
   <ol>
     <h4>Messages for <%= convo.name %></h4>
+    <% if logged_in? %>
+    <%= button_to "Create New Message",new_conversation_message_path(convo.id), method: :get %>
+  <% end %><br>
     <% convo.messages.each do |message| %>
     <li><%= message.content %></li>
-  <% end %>
+    <% end %>
   </ol><br>
 
 <% end %>
