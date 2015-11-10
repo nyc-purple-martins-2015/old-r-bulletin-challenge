@@ -1,0 +1,15 @@
+<h1><%= @topic.name %></h1>
+<% if logged_in? %>
+<%= link_to new_topic_conversation_path(@topic), remote: true do %>
+  <button class="new_convo_button">New Post</button>
+<% end %>
+  <div class="new_convo_form"></div>
+<%else%>
+  <h4>Log In To Create a New Post</h4>
+<%end%>
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <li><%= link_to conversation.name, conversation_path(conversation) %></li>
+  <% end %>
+</ul>

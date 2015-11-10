@@ -1,0 +1,9 @@
+<h1>Forum</h1>
+
+<% @categories.each do |category| %>
+  <h3><%= category.name %></h3>
+    <% category.topics.each do |topic| %>
+      <h4><%= link_to topic.name, topic_path(topic) %></h4>
+    <% end %>
+<% end %>
+

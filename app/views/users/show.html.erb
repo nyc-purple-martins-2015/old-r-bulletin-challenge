@@ -1,0 +1,14 @@
+<h2><%= @user.username %></h2>
+<div>Conversations I Started</div>
+  <% @author_conversations.each do |convo| %>
+    <p><%= convo.name %> </p>
+  <%end%>
+
+<div>My Most Recent Messages</div>
+  <% @user.messages.each do |message| %>
+    <p><%= message.content %> </p>
+  <%end%>
+
+
+
+
