@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :conversations
   end
 
+  resources :messages
+
   resources :users, only: :create
   get 'register' => 'users#new', as: :register
   get 'logout' => 'sessions#destroy', as: :logout
