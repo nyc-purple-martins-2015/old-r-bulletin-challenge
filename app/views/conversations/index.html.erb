@@ -1,0 +1,9 @@
+<h1><%= @topic.name %></h1>
+
+<h2>There are <%= @conversations.count %> conversations</h2>
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <li><%= link_to conversation.name , [@topic, conversation] %></li>
+  <% end %>
+</ul>
