@@ -1,0 +1,5 @@
+<ol>
+<% @messages.each do |message| %>
+<li> <%= link_to "#{message.conversation.name}", conversation_path(message.conversation) %> </li>
+<% end %>
+</ol>

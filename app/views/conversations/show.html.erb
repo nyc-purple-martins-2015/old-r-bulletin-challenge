@@ -1,0 +1,11 @@
+<h1> <%= @conversation.name %> </h1>
+
+<ol>
+  <% @conversation.messages.each do |message| %>
+    <li> <%= message.content %> </li>
+  <% end %>
+</ol>
+
+<% if logged_in? %>
+<%= render "messages/new"%>
+<%end%>
