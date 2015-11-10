@@ -5,10 +5,10 @@ class MessagesController < ApplicationController
 				conversation = Conversation.find(msg.conversation_id)
 				topic = conversation.topic
 				if msg.save
-					redirect_to topic_conversation_path(conversation, topic)
+					redirect_to conversation_path(conversation)
 				else
 					flash[:notice] = "Please enter a comment!"
-					redirect_to topic_conversation_path(conversation, topic)
+					redirect_to conversation_path(conversation)
 				end
 			else
 				flash.now[:notice] = "You must be logged in to comment!"
