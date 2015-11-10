@@ -1,0 +1,11 @@
+<h1><%= @topic.name%></h1>
+
+<% @conversations.each do |conv| %>
+<p> <%= link_to "#{conv.name}", topic_conversation_path(@topic, conv) %> </p>
+<% end %> 
+<h1> Enter new conversation for <%= @topic.name %>: </h1>
+<%= form_for ([@topic, @conversation]) do |f| %>
+   <%= f.label 'name:' %>
+  <%= f.text_field :name %>
+  <%= f.submit "Submit" %>
+<% end %>

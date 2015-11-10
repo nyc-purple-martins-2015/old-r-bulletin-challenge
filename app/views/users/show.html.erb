@@ -1,0 +1,19 @@
+<h1><%= @user.username %></h1>
+
+<ul>
+	<h2>Conversations started by <%= @user.username %></h2>
+  <% if @conversations %>
+    <% @conversations.each do |c| %>
+      <li><%= c.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+<ul>
+
+  <h2>Messages posted by <%= @user.username %></h2>
+  <% if @messages %>
+    <% @messages.each do |m| %>
+      <li><%= m.content %></li>
+    <% end %>
+  <% end %>
+</ul>
