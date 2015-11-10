@@ -1,7 +1,11 @@
 <div class="new-message-link">
   <% if log_in? %>
-    <%= link_to "New Message", "/conversations/#{@conversation.id}/messages/new" %>
+    <%= link_to new_conversation_message_path(@conversation), remote: true do %>
+    <button>New Message</button>
+    <% end %>
   <% end %>
+</div>
+<div class="empty">
 </div>
 <div class="message-list">
   <% @conversation.messages.each do |message| %>
