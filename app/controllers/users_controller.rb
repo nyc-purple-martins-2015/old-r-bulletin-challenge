@@ -14,11 +14,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @conversations = Conversation.where(user_id: current_user.id)
+    @messages = Message.where(user_id: current_user.id)
+  end
+
   private
 
   def permitted_params
     params.require(:user).permit(:username, :password, :password_confirmation)
   end
+
 
 
 end
