@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new', as: :login
   post 'session_create' => 'sessions#create', as: :session_create
 
+  namespace "my" do
+    resources :messages, only: :index
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
