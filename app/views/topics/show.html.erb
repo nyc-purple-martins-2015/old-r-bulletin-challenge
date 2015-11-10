@@ -1,0 +1,7 @@
+<h1><%= @topic.name %></h1>
+
+<ul class="conversation-list">
+  <% @topic.conversations.each do |conversation| %>
+    <li><%= link_to conversation.name, [@topic, conversation] %></li>
+  <% end %>
+</ul>
