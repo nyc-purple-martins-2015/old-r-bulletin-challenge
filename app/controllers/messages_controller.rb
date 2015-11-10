@@ -11,7 +11,8 @@ class MessagesController < ApplicationController
       redirect_to @conversation
     else
       flash.now[:notice] = "No Message"
-      render :new
+      # render layout: false
+      # line 14 does not turn off layout, had to pull out with ajax.
     end
   end
 
