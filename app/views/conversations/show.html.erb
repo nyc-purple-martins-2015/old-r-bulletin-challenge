@@ -1,0 +1,13 @@
+<h1><%= @conversation.name %></h1>
+
+<h2>There are <%= @conversation.messages.count %> messages</h2>
+
+<% if logged_in? %>
+  <%= render partial: 'messages/message_form', locals: { conversation: @conversation, message: Message.new } %>
+<% end %>
+
+<ul>
+  <% @conversation.messages.each do |message| %>
+    <li><%= message.content %></li>
+  <% end %>
+</ul>

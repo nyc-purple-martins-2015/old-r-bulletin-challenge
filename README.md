@@ -9,12 +9,22 @@
 * Navigate a list of user stories and discuss/clarify requirements
 
 ## Summary
-We're going to build a fairly simple online forum system, similar to v-bulletin or phpBB or one of the many others of that ilk. But we'll build it from scratch.
 
-To get you started we have a number of models and tables already set up, but no routes, controllers or views. The full list of user stories is outlined below. See how far you get with this in a day. We'll revisit this app later in the phase, and use it as an example for our feature testing practice.
+We're going to build a fairly simple online forum system, similar to v-bulletin
+or phpBB or one of the many others of that ilk. But we'll build it from
+scratch.
+
+To get you started we have a number of models and tables already set up, but no
+routes, controllers or views. The full list of user stories is outlined below.
+See how far you get with this in a day. We'll revisit this app later in the
+phase, and use it as an example for our feature testing practice.
 
 ##Getting started
-Clone this repo. cd into it and ```bundle install```. Then ```rake db:drop && rake db:create && rake db:migrate && rake db:seed```
+
+* Clone this repo
+* `cd` into it
+* `bundle install`
+* `rake db:drop && rake db:create && rake db:migrate && rake db:seed`
 
 Release 0: Implement the "as a visitor" user stories
 
