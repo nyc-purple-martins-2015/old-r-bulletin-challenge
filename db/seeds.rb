@@ -20,17 +20,16 @@ users = User.all
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')
 puts "Created categories"
 
-puts "Creating topics conversations and messages"
-12.times do |n|
-  print "#{sprintf("%2d", n + 1)} of 12 ."
-  top = Topic.create!(name: "#{Faker::App.name} #{alphabet.sample} #{Faker::App.name} #{Faker::App.name}", category: cats.sample)
-  30.times do
+12.times do
+  print "."
+  top = Topic.create!(name: "#{Faker::App.name} #{alphabet.sample} #{Faker::App.name}", category: cats.sample)
+  16.times do
     print "+"
     thr = Conversation.create!(name:Faker::Commerce.product_name, topic:top, author:users.sample )
     Random.rand(120).times do
       msg = Message.create!(user:users.sample, conversation:thr, content:Faker::Lorem.paragraphs(3).join("\n"))
     end
   end
-  puts "Done"
+  puts
 
 end
