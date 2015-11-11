@@ -267,6 +267,11 @@
         1,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/apprentice/r-bulletin-challenge/config/routes.rb": [
@@ -364,7 +369,7 @@
         null,
         null,
         1,
-        7,
+        11,
         null,
         null,
         1,
@@ -372,11 +377,11 @@
         null,
         null,
         1,
-        7,
+        11,
         null,
         null,
         1,
-        7,
+        11,
         null,
         null,
         null
@@ -427,7 +432,50 @@
         null
       ],
       "/Users/apprentice/r-bulletin-challenge/spec/controllers/topics_controller_spec.rb": [
-
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/r-bulletin-challenge/app/controllers/topics_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
       ],
       "/Users/apprentice/r-bulletin-challenge/spec/controllers/users_controller_spec.rb": [
         1,
@@ -487,8 +535,28 @@
         1,
         1,
         null
+      ],
+      "/Users/apprentice/r-bulletin-challenge/app/models/topic.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/r-bulletin-challenge/app/models/conversation.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1447281477
+    "timestamp": 1447282947
   }
 }

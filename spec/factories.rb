@@ -6,4 +6,9 @@ FactoryGirl.define do
     password "cat"
   end
 
+  factory :topic do
+    name "kittens"
+  end
+
+
 end
