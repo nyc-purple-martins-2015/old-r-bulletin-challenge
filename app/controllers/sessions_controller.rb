@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:user][:username])
-    if user.password == params[:password]
+    if user && user.authenticate(params[:password])
       flash[:notice] = "Awesome sauce"
       session[:user_id] = user.id
     else
