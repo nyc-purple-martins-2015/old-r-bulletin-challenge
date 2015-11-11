@@ -40,7 +40,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'launchy'
-
+  gem 'simplecov', :require => false, :group => :test
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
