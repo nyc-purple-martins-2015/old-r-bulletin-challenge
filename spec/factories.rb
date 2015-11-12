@@ -10,5 +10,11 @@ FactoryGirl.define do
     name "kittens"
   end
 
+  factory :conversation do
+    name "kittens and cats"
+    association :author, factory: :user
+    association :topic
+  end
+
 
 end
