@@ -1,5 +1,7 @@
 # r-bulletin: like v-bulletin but not as complex
 
+!['circle'](https://circleci.com/gh/nyc-purple-martins-2015/r-bulletin-challenge.svg?style=shield&circle-token=:circle-token)
+
 ## Learning Competencies
 
 * Build a rails app from the ground up
