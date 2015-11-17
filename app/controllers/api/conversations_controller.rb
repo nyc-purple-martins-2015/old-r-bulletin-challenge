@@ -1,7 +1,7 @@
 class Api::ConversationsController < Api::ApiController
 
   def index
-    render json: Topic.find(params[:topic_id]).conversations_reverse_cron
+    render json: Topic.find(params[:topic_id]).recent_conversations
   end
 
   def show

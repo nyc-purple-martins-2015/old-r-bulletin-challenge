@@ -8,6 +8,6 @@ class Api::TopicsController < Api::ApiController
 
   def show
     topic = Topic.find(params[:id])
-    render json: topic.to_json(include: [:conversations_reverse_cron])
+    render json: topic.to_json(include: [:recent_conversations])
   end
 end
