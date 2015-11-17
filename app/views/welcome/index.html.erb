@@ -1,4 +1,22 @@
- 
-<div id="api-content">
-  
-</div>
+<script id="topic-template" type="text/x-handlebars-template">
+  <h2>Topics</h2>
+  {{#each topicList}}
+  <div class="topic">
+    <a data-topic-id="{{id}}" data-banana-name="a" class="topic-link" id="{{id}}" href="#">{{name}}</a>
+  </div>
+  {{/each}}
+</script>
+
+
+<script id="topic-detail" type="text/x-handlebars-template">
+  <h2>Conversations in {{topic.name}}</h2>
+
+  {{#each topic.recent_conversations}}
+  <div class="conversation">
+    <a class="conversation-link" id="{{id}}" href="#">{{name}}</a>
+  </div>
+  {{/each}}
+</script>
+
+
+<div id="api-content"></div>
