@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :api do
+    resources :topics, only: [:index, :show] do
+      resources :conversations, only: [:index, :show]
+    end
+    resources :messages, only: [:create]
+    resource :sessions, only: [:create, :show]
+    get 'conversations' => 'conversations#recent'
+  end
+
   resources :topics, only: [:index, :show] do
     resources :conversations
   end
