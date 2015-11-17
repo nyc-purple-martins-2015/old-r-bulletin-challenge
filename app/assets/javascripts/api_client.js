@@ -25,11 +25,7 @@ $(document).ready(function() {
       deferred.done(function(serverResponse){
         placeTopics(serverResponse);
       });
-
     }
-
-
-
 
 });
 
